@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "lottie-vuejs": "^0.3.7",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "nuxt-fullpage.js": "0.0.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.1.1"

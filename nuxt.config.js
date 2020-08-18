@@ -15,7 +15,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'UOT CARE',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -35,7 +35,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/lottie-vue.js'
+    { src: '~/plugins/fullpage', mode: 'client'}
+    // '@/plugins/lottie-vue'
   ],
   /*
   ** Auto import components
@@ -51,8 +52,9 @@ export default {
   ],
   /*
   ** Nuxt.js modulesz
-  */mv
+  */
   modules: [
+    'nuxt-fullpage.js',
   ],
   /*
   ** Build configuration
