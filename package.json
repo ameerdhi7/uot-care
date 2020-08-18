@@ -1,0 +1,18 @@
+{
+  "name": "uotair",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "lottie-vuejs": "^0.3.7",
+    "nuxt": "^2.14.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^2.1.1"
+  }
+}
