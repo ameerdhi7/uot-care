@@ -3,7 +3,8 @@
     <Navbar/>
       <full-page :options="options">
         <HeroSection/>
-        <Login/>
+        <Register/>
+        <Hospitals/>
       </full-page>
   </div>
 </template>

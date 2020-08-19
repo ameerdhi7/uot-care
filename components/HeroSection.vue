@@ -1,6 +1,6 @@
 <template>
-    <div class="section  body-font">
-      <div class="container mx-auto flex px-5 pb-24 items-center justify-center flex-col">
+    <div class="section">
+      <div class="container mx-auto flex px-5 pb-24 lg:mb-16 items-center justify-center flex-col">
         <div class="text-center lg:w-2/3 w-full">
           <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium font-medium text-white">Browse Hospitals Offers and get the benefits!</h1>
           <p class="mb-8 text-white leading-relaxed">Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.</p>
