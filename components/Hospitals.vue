@@ -1,12 +1,15 @@
 <template>
-  <div class="w-full section h-screen bg-teal-900 flex">
-    <div class="max-w-sm bg-gray-300   rounded overflow-hidden shadow-lg">
+  <div class="w-full section h-screen bg-teal-900  flex">
+    <div class="w-1/2  float-right">
+      <img src="/img/medicine-amico.svg">
+    </div>
+    <div class="max-w-sm bg-gray-300 mt-3  rounded overflow-hidden shadow-lg">
       <p class="p-4">Countries</p>
       <div class="border-b-2 m-0"></div>
       <p class="p-4">Select Country: </p>
       <div class="mr-8 ml-4">
         <div class="relative">
-          <button class="bg-teal p-3 rounded text-white shadow-inner w-full">
+          <button class="bg-teal p-3 bg-teal-600 rounded text-white shadow-inner w-full">
             <span class="float-left">Show options</span>
 
             <svg class="h-4 float-right fill-current text-white" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
@@ -15,7 +18,7 @@
               </g>
             </svg>
           </button>
-          <div class="rounded shadow-md my-2 relative pin-t pin-l">
+          <div class="rounded bg-white shadow-md my-2 relative pin-t pin-l">
             <ul class="list-reset">
               <li class="p-2"><input class="border-2 rounded h-8 w-full"><br></li>
               <li><p class="p-2 block text-black hover:bg-grey-light cursor-pointer">

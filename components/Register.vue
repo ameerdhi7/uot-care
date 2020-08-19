@@ -82,5 +82,6 @@
     background: #276563;
     background-repeat: no-repeat;
     background-image: url('/img/register-background.png');
+    filter: hue-rotate(381deg);
   }
 </style>
