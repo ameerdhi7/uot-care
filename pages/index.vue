@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar/>
       <full-page :options="options">
         <HeroSection/>
         <Register/>

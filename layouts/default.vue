@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div>git
+    <Navbar/>
     <Nuxt/>
   </div>
 </template>
