@@ -1,10 +1,9 @@
 <template>
       <ul id="menu" class="mx-auto">
         <li class="text-white mr-3 text-lg md:border-r px-2 md:border-gray-40 font-semibold" style="font-family: 'Roboto Mono', monospace;" >Uot care</li>
-        <li data-menuanchor="home" class="mr-5 active text-white hover:text-white"><a href="#home">Home</a></li>
-        <li data-menuanchor="register" class="mr-5 text-white hover:text-white"><a href="">Sign in</a></li>
-        <li class="mr-5 text-white hover:text-white"><a href="">Sign up</a></li>
-<!--        <li class="mr-5 text-white hover:text-white"><a href="">Browse Hospitals</a></li>-->
+        <li data-menuanchor="home" class="mr-5 active text-white scale-hover"><a href="#home">Home</a></li>
+        <li data-menuanchor="register" class="mr-5 text-white scale-hover"><a href="">Sign in</a></li>
+        <li data-menuanchor="offers" class="mr-5 text-white scale-hover"><a href="#offers">Browse Offers</a></li>
       </ul>
 </template>
 <style>

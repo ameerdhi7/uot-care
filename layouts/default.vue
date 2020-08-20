@@ -3,7 +3,6 @@
     <Nuxt/>
   </div>
 </template>
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap');
@@ -11,10 +10,25 @@
     font-family: 'Tajawal', sans-serif;
   }
   body {
-    background: url("/img/doctor-hand-bg.jpg") rgb(0 0 0 / 30%);
+    /*background: url("/img/doctor-pills-bg.jpg");*/
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    background-blend-mode: multiply;
+    background: #162e40;
+    /*background-blend-mode: multiply;*/
+  }
+  #fp-nav ul li a span, .fp-slidesNav ul li a span{
+    background: white !important;
+  }
+  #fp-nav ul li a[class=active] span:nth-child(2){
+    height: 12px;
+    width: 12px;
+    border-radius: 0 !important;
+  }
+  .scale-hover{
+    transition: all .3s;
+  }
+  .scale-hover:hover{
+    transform: scale(1.1);
   }
 </style>

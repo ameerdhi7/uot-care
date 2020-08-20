@@ -79,9 +79,9 @@
 <style>
   .register-bg {
     background-size: 100%;
-    background: #276563;
+    background: #162e40;
     background-repeat: no-repeat;
     background-image: url('/img/register-background.png');
-    filter: hue-rotate(381deg);
+    /*filter: hue-rotate(381deg);*/
   }
 </style>
