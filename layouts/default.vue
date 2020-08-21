@@ -1,5 +1,5 @@
 <template>
-  <div>git
+  <div>
     <Navbar/>
     <Nuxt/>
   </div>
@@ -16,7 +16,6 @@
     background-attachment: fixed;
     background-size: cover;
     background: #162e40;
-    /*background-blend-mode: multiply;*/
   }
   #fp-nav ul li a span, .fp-slidesNav ul li a span{
     background: white !important;
