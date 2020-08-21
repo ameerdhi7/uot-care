@@ -1,10 +1,21 @@
-
+import {loginPath} from './constants'
 export default {
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
   mode: 'universal',
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: loginPath, method: 'post' },
+        },
+        tokenRequired: false,
+        tokenType: false
+      }
+    }
+  },
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -55,6 +66,8 @@ export default {
   */
   modules: [
     'nuxt-fullpage.js',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
   /*
   ** Build configuration
