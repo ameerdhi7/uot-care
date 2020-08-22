@@ -9,6 +9,8 @@
 </template>
 
 <script>
+  import {loginPath, universitiesPath} from "../constants";
+
   export default {
     data() {
       return {
@@ -21,9 +23,15 @@
           keyboardScrolling:true
 
         },
+
       }
+    },
+    fetchOnServer: false,
+    created() {
+      // this.$axios.$get(universitiesPath).then(response=>console.log(response.data))
     }
   }
+
 </script>
 
 <style>

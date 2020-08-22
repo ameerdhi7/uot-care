@@ -1,21 +1,11 @@
-import {loginPath} from './constants'
+import {loginPath,logoutPath} from './constants'
 export default {
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'universal',
-  auth: {
-    strategies: {
-      local: {
-        endpoints: {
-          login: { url: loginPath, method: 'post' },
-        },
-        tokenRequired: false,
-        tokenType: false
-      }
-    }
-  },
+  mode: 'spa',
+
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -26,7 +16,7 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    title: 'UOT CARE',
+    title: 'UOT Care',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -67,7 +57,8 @@ export default {
   modules: [
     'nuxt-fullpage.js',
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    'vue-sweetalert2/nuxt',
   ],
   /*
   ** Build configuration
@@ -75,7 +66,20 @@ export default {
   */
   build: {
   },
-  generate: {
-    fallback: true
-  }
+  // generate: {
+  //   fallback: true
+  // },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: loginPath, method: 'post' },
+          logout: { url: logoutPath, method: 'get' },
+          user: { url: loginPath, method: 'get', propertyName: 'user' }
+        },
+        tokenRequired: false,
+        tokenType: false
+      }
+    }
+  },
 }

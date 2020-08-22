@@ -3,17 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --port 3333",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxt/http": "^0.5.11",
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.1",
+    "axios": "^0.20.0",
     "lottie-vuejs": "^0.3.7",
     "nuxt": "^2.14.0",
-    "nuxt-fullpage.js": "0.0.3"
+    "nuxt-fullpage.js": "0.0.3",
+    "qs": "^6.9.4",
+    "vue-sweetalert2": "^3.0.6"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.1.1"
