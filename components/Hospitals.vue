@@ -1,45 +1,57 @@
 <template>
-  <div class="w-full section h-screen" style="background: #162e40">
-   <div class="container w-full items-center flex justify-between ">
-     <div class="w-1/2 bg-gray-300 m-5  rounded  shadow-lg">
-       <p class="p-4">Select a Hospital to show its offers</p>
-       <div class="border-b-2 m-0"></div>
-       <p class="p-4">Select Hospital: </p>
-       <div class="mr-8 ml-4">
-         <div class="relative">
-           <button class="bg-teal p-3 bg-teal-600 rounded text-white shadow-inner w-full">
-             <span class="float-left">Show options</span>
-             <svg class="h-4 float-right fill-current text-white" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
-               <g>
-                 <path
-                   d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/>
-               </g>
-             </svg>
-           </button>
-           <div class="rounded bg-white shadow-md my-2 relative  ">
-             <ul class="list-reset">
-               <li class="p-2"><input class="border-2 rounded h-8 w-full"><br></li>
-               <li>
-                 <p class="p-2 block text-black hover:bg-grey-light cursor-pointer">
-                   USA
-                   <svg class="float-right" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                        viewBox="0 0 18 18">
-                     <path d="M6.61 11.89L3.5 8.78 2.44 9.84 6.61 14l8.95-8.95L14.5 4z"/>
-                   </svg>
-                 </p>
-               </li>
-               <li>
-                 <p class="p-2 block text-black hover:bg-grey-light cursor-pointer">Montenegro</p>
-               </li>
-             </ul>
-           </div>
-         </div>
-       </div>
-     </div>
-     <div class="w-1/2 float-right">
-       <img src="/img/medicine-amico.svg">
-     </div>
-   </div>
+  <div class="w-full section h-screen flex items-center justify-center" style="background: #162e40">
+    <div style="height: 77%" class="hospital-section-bg  flex justify-center items-center  w-full">
+      <div class="rounded p-12 my-auto  bg-gray-300">
+        <h1 class="text-3xl ">Select a University to Browse its offers</h1>
+        <div class="inline-block relative w-64 mt-3">
+          <select v-model="selectedHospital"
+                  class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+            <option v-for="hospital in hospitals" :value="hospital.id">{{hospital.name}}</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+            </svg>
+          </div>
+        </div>
+        <button class="inline-flex text-white
+            -teal-500 border-0 py-2 rounded-lg px-12 scale-hover focus:outline-none bg-teal-900 rounded  text-lg">
+          <nuxt-link :to="`/hospitals/${selectedHospital}`">Browse</nuxt-link>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
+<script>
+  import {hospitalsPath} from "../constants";
+
+  export default {
+    data() {
+      return {
+        hospitals: [],
+        selectedHospital: '',
+      }
+    },
+    methods: {
+      async fetchHospitals() {
+        try {
+          const response = await this.$axios.$get(hospitalsPath);
+          this.hospitals = response.data;
+        } catch (e) {
+          console.log(e)
+        }
+      }
+    },
+    mounted() {
+      this.fetchHospitals()
+    }
+  }
+</script>
+<style>
+  .hospital-section-bg {
+    background: url('/img/pill-bg.jpg') #282828;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+  }
+</style>

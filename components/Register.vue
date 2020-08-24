@@ -95,7 +95,7 @@
                   </div>
                   <button
                     @click="registerUser"
-                    class="bg-teal-600 text-white mt-2 active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1  w-full"
+                    class="bg-teal-900 text-white mt-2 active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1  w-full"
                     type="button"
                     style="transition: all 0.15s ease 0s;"
                   >
@@ -142,7 +142,7 @@
       handResponseMessage(message) {
         if (message.includes("Verify"))
           this.$swal(
-            `'Good job!'${this.credentials.username}`,
+            `Good job! ${this.credentials.username}`,
             `Verification email has sent to ${this.credentials.email} . Verify your account to use Health Care App.`,
             'success'
           );
@@ -158,6 +158,10 @@
           const response = await this.$axios.$post(registerPath, qs.stringify(this.credentials));
           this.handResponseMessage(response.message)
         } catch (err) {
+          this.$swal({
+            icon: 'error',
+            title: 'Please fill out the all the required fields',
+          });
           console.log(err)
         }
       }
