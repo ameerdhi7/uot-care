@@ -17,7 +17,6 @@
         </div>
         <div class="mt-3">
           <button @click="userLogin" class="bg-teal-600 text-white px-3 py-2 rounded w-full mt-4">Submit</button>
-          <button @click="tester" class="bg-teal-600 text-white px-3 py-2 rounded w-full mt-4">tester</button>
         </div>
         <!--        </form>-->
       </div>
@@ -51,24 +50,6 @@
 
         }
       },
-      async tester() {
-        try {
-          let response = await this.$axios.$get(`${ApiBaseUrl}tester`, {
-        //     headers: {
-        //       Cookie:qs.stringify(this.user)
-        //     //   'Access-Control-Allow-Origin': '*'
-        //
-        // },
-            withCredentials:true
-          });
-          // await this.$auth.loginWith('local', { data: qs.stringify(this.credentials)});
-          console.log('tester response', response);
-          this.$swal(response.message)
-        } catch (err) {
-          console.log(err)
-
-        }
-      }
     },
   }
 
