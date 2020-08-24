@@ -1,12 +1,14 @@
 <template>
-      <ul id="menu" class="mx-auto">
-        <li class="text-white mr-3 text-lg md:border-r px-2 md:border-gray-40 font-semibold" style="font-family: 'Roboto Mono', monospace;" >Uot care</li>
-        <li data-menuanchor="home" class="mr-5 active text-white scale-hover"><a href="/#home">Home</a></li>
-        <li data-menuanchor="register" class="mr-5 text-white scale-hover"><a href="/login">Sign in</a></li>
-        <li data-menuanchor="offers" class="mr-5 text-white scale-hover"><a href="/#offers">Browse Offers</a></li>
-      </ul>
+  <ul id="menu" class="mx-auto">
+    <li id="logo" class="text-white mr-3 text-lg md:border-r px-2 md:border-gray-40 uppercase font-extrabold"
+        style="font-family: 'Roboto Mono', monospace;">Uot care
+    </li>
+    <li data-menuanchor="home" class="mr-5 active text-white scale-hover"><a href="/#home">Home</a></li>
+    <li data-menuanchor="register" class="mr-5 text-white scale-hover"><NLink to="/login">Sign in</NLink></li>
+    <li data-menuanchor="offers" class="mr-5 text-white scale-hover"><a href="/#offers">Browse Offers</a></li>
+  </ul>
 </template>
-<style>
+<style scoped>
   #menu-line {
     position: absolute;
     bottom: -4px;
@@ -49,5 +51,24 @@
     left: 0;
     right: 0;
     display: block
+  }
+
+  @media (max-width: 600px) {
+    #menu {
+      position: fixed;
+      bottom: 0px !important;
+      top: initial !important;
+      left: 0px !important;
+      width: 100%;
+      background: #234e52;
+      padding: 0.3rem;
+      display: flex;
+      justify-content: center;
+      border-top-width: 1px;
+    }
+    #logo {
+      display: none !important;
+    }
+
   }
 </style>

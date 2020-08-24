@@ -1,7 +1,7 @@
 <template>
   <div class="absolute bg-gray-200 section w-full h-full">
     <div
-      class="absolute  register-bg w-full h-full">
+      class="absolute register-bg w-full h-full">
     </div>
     <div class="container mx-auto px-4 h-full">
       <div class="flex content-center items-center justify-center h-full">
@@ -19,7 +19,7 @@
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
               <form class="w-full max-w-lg">
-                <div class="flex flex-wrap -mx-3 mb-1">
+                <div class="flex  -mx-3 mb-1">
                   <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                            for="grid-first-name">
@@ -40,7 +40,7 @@
                            id="grid-last-name" type="text" placeholder="Doe">
                   </div>
                 </div>
-                <div class="flex flex-wrap -mx-3 mb-1">
+                <div class="flex  -mx-3 mb-1">
                   <div class="w-full md:w-1/2 px-3 mb-3 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                            for="email">
