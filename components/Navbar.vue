@@ -3,11 +3,33 @@
     <li id="logo" class="text-white mr-3 text-lg md:border-r px-2 md:border-gray-40 uppercase font-extrabold"
         style="font-family: 'Roboto Mono', monospace;">Uot care
     </li>
-    <li data-menuanchor="home" class="mr-5 active text-white scale-hover"><a href="/#home">Home</a></li>
-    <li data-menuanchor="register" class="mr-5 text-white scale-hover"><NLink to="/login">Sign in</NLink></li>
-    <li data-menuanchor="offers" class="mr-5 text-white scale-hover"><a href="/#offers">Browse Offers</a></li>
+    <li data-menuanchor="home" class="mr-5 active text-white scale-hover">
+      <NLink to="/#home">Home</NLink>
+    </li>
+    <li v-if="!this.$auth.loggedIn" data-menuanchor="register" class="mr-5 text-white scale-hover">
+      <NLink to="/login">Sign in</NLink>
+    </li>
+    <li data-menuanchor="offers" class="mr-5 text-white"><a href="/#offers">Browse Offers</a></li>
+    <li v-if="this.$auth.loggedIn" @click="logoutButtonOpened=!logoutButtonOpened"  class="md:fixed  md:right-0 text-white scale-hover">
+    <div class="flex">
+      <svg  class="fill-current  w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+      </svg>
+      {{this.$auth.user.username}}
+    </div>
+      <button @click="this.$auth.logout()" v-show="logoutButtonOpened" href=""  class="bg-teal-900 logout-trans w-full rounded p-1">Logout</button>
+    </li>
   </ul>
 </template>
+<script>
+  export default {
+    data(){
+      return {
+        logoutButtonOpened:false
+      }
+    }
+  }
+</script>
 <style scoped>
   #menu-line {
     position: absolute;
@@ -34,6 +56,13 @@
     margin: 10px 0;
     position: relative
   }
+
+  #menu li:last-child {
+    margin: 0 !important;
+    position: fixed;
+    top: 34px;
+  }
+
 
   #menu a {
     color: #fff;
@@ -66,9 +95,13 @@
       justify-content: center;
       border-top-width: 1px;
     }
+
     #logo {
       display: none !important;
     }
 
+  }
+  .logout-trans{
+    transition: all .6s;
   }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div>
-      <full-page :options="options">
-        <HeroSection/>
-        <Register/>
-        <Hospitals/>
-      </full-page>
+    <full-page :options="options">
+      <HeroSection/>
+      <Register/>
+      <Hospitals/>
+    </full-page>
   </div>
 </template>
 
@@ -12,28 +12,20 @@
   import {loginPath, universitiesPath} from "../constants";
 
   export default {
+    name: 'index',
     data() {
       return {
         options: {
           licenseKey: '298390128390128',
           menu: '#menu',
-          anchors: ['home', 'register', 'offers'],
+          anchors: this.$auth.loggedIn ? ['home', 'offers'] : ['home', 'register', 'offers'],
           navigation: true,
-          scrollingSpeed:1000,
-          keyboardScrolling:true
+          scrollingSpeed: 1000,
+          keyboardScrolling: true
 
         },
-
       }
     },
-    fetchOnServer: false,
-    created() {
-      // this.$axios.$get(universitiesPath).then(response=>console.log(response.data))
-    }
   }
 
 </script>
-
-<style>
-
-</style>

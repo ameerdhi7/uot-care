@@ -7,8 +7,8 @@
         <h3 class="text-grey-dark  font-medium font-sans mb-5 leading-normal">Login to Check our latest offers!</h3>
         <div class="mt-3">
           <label>User Name</label>
-          <input v-model="credentials.username" type="text" class="border-solid border w-full rounded px-3 py-2"
-                 placeholder="username"/>
+          <input v-model="credentials.email" type="text" class="border-solid border w-full rounded px-3 py-2"
+                 placeholder="email"/>
         </div>
         <div class="mt-3">
           <label>Password</label>
@@ -30,7 +30,7 @@
     data() {
       return {
         credentials: {
-          username: '',
+          email: '',
           password: ''
         },
         user: null,
@@ -40,8 +40,10 @@
       async userLogin() {
         try {
           let response =
-            await this.$axios.$post(loginPath, qs.stringify(this.credentials));
-          // await this.$auth.loginWith('local', { data: qs.stringify(this.credentials)});
+            await this.$auth.loginWith('local', {data: qs.stringify(this.credentials)})
+              .then(() => this.$router.replace({name: 'index'})
+              )
+          ;
           console.log(response);
           this.user = response.data;
         } catch (err) {
@@ -49,6 +51,13 @@
 
         }
       },
+    },
+    created() {
+      if (this.$auth.loggedIn) {
+        this.$router.replace({name: 'index'})
+
+
+      }
     },
   }
 

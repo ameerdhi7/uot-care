@@ -1,4 +1,4 @@
-import {loginPath,logoutPath} from './constants'
+import {loginPath} from './constants'
 export default {
   /*
   ** Nuxt rendering mode
@@ -74,12 +74,13 @@ export default {
       local: {
         endpoints: {
           login: { url: loginPath, method: 'post' },
-          // logout: { url: logoutPath, method: 'get' },
-          // user: { url: loginPath, method: 'get', propertyName: 'user' }
+          logout: false,
+          user: { url: loginPath, method: 'get', propertyName: 'user' }
         },
-        tokenRequired: false,
-        tokenType: false
+        tokenName:"x-auth-token",
+        tokenType:null
       }
     }
   },
 }
+

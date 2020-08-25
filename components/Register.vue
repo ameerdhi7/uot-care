@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute bg-gray-200 section w-full h-full">
+  <div v-if="!this.$auth.loggedIn" class="absolute bg-gray-200 section w-full h-full">
     <div
       class="absolute register-bg w-full h-full">
     </div>
