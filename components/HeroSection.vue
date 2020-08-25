@@ -6,38 +6,31 @@
           care</h1>
         <p class="mb-8 text-white md:text-3xl text-lg sm:mx-2 leading-relaxed">Browse The Hospitals Offers and get the
           benefits!</p>
-        <div class="flex justify-center">
+        <div v-if="!this.$auth.loggedIn" class="flex justify-center">
           <button class="inline-flex text-white
             -teal-500 border-0 py-2 rounded-lg px-12 scale-hover focus:outline-none bg-teal-900 rounded  text-lg">
-            <Nuxt-link  :to=buttonTopic.link>{{buttonTopic.title}}</Nuxt-link>
+            <Nuxt-link  to="/login">Sign in</Nuxt-link>
           </button>
-          <button v-if="!this.$auth.loggedIn"
+          <button
             class="ml-4 inline-flex scale-hover text-gray-70Ø0 rounded-lg bg-gray-200 border-0 py-2 px-12 text-teal-900 focus:outline-none hover:bg-gray-300 rounded text-lg">
             <a data-menuanchor="register" href="/#register">Sign up</a></button>
         </div>
+        <div v-else class="flex justify-center">
+          <button class="inline-flex text-white
+            -teal-500 border-0 py-2 rounded-lg px-12 scale-hover focus:outline-none bg-teal-900 rounded  text-lg">
+            <a data-menuanchor="offers"  href="/#offers">Browse offers</a>
+          </button>
+        </div>
+
       </div>
     </div>
 
   </div>
 </template>
-<script>
-  export default {
-    computed: {
-      buttonTopic() {
-        return this.$auth.loggedIn ? {link: "/#offers", title: "Browse offers"} : {
-          link: "/#register",
-          title: "Sign in"
-        };
-      },
-    }
-  }
-</script>
 <style scoped>
-
   @media (min-width: 768px) {
     .hero-title {
       font-size: 6rem;
     }
   }
-
 </style>
