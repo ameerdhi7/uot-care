@@ -10,7 +10,7 @@
       <NLink to="/login">Sign in</NLink>
     </li>
     <li data-menuanchor="offers" class="mr-5 text-white"><a href="/#offers">Browse Offers</a></li>
-    <li v-if="this.$auth.loggedIn" @click="logoutButtonOpened=!logoutButtonOpened"  class="md:fixed  md:right-0 text-white scale-hover">
+    <li id="logout-button" v-if="this.$auth.loggedIn" @click="logoutButtonOpened=!logoutButtonOpened"  class="md:fixed  md:right-0 text-white scale-hover">
     <div class="flex">
       <svg  class="fill-current  w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
@@ -56,13 +56,14 @@
     margin: 10px 0;
     position: relative
   }
-
-  #menu li:last-child {
+@media (min-width: 768px) {
+  #logout-button {
     margin: 0 !important;
     position: fixed;
     top: 34px;
   }
 
+}
 
   #menu a {
     color: #fff;
