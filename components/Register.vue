@@ -156,7 +156,7 @@
       async registerUser() {
         try {
           const response = await this.$axios.$post(registerPath, qs.stringify(this.credentials));
-          this.handResponseMessage(response.message)
+          this.handResponseMessage(response.data.message)
         } catch (err) {
           this.$swal({
             icon: 'error',
