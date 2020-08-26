@@ -9,15 +9,15 @@
           <div
             class="relative flex flex-col min-w-0 break-words w-full  bg-gray-300 rounded-lg  border-0"
           >
-            <div class="rounded-t mb-0 px-6 py-6">
+            <div class="rounded-t mb-0 px-6 py-1 md:py-6">
               <div class="text-center md:mb-3">
                 <h5 class="text-gray-600  font-bold">
                   Register to Uot Care to get students package
                 </h5>
               </div>
-              <hr class="mt-3 border-b-1 border-gray-400"/>
+              <hr class="mt-1 md:mt-3 border-b-1 border-gray-400"/>
             </div>
-            <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+            <div class="flex-auto px-4 lg:px-10 py-gdd10 pt-0">
               <form class="w-full max-w-lg">
                 <div class="flex  -mx-3 mb-1">
                   <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
