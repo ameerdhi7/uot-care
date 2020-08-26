@@ -7,21 +7,21 @@
       <div class="flex content-center items-center justify-center h-full">
         <div class="w-full lg:w-1/2 px-4">
           <div
-            class="relative flex flex-col min-w-0 break-words w-full  bg-gray-300 rounded-lg  border-0"
+            class="relative flex flex-col min-w-0 break-words w-full mb-1 md:mb-3 bg-gray-300 rounded-lg  border-0"
           >
-            <div class="rounded-t mb-0 px-6 py-1 md:py-6">
+            <div class="rounded-t mb-0 px-6 py-6">
               <div class="text-center md:mb-3">
-                <h5 class="text-gray-600  font-bold">
+                <h5 class="text-gray-600 register-card-title font-bold">
                   Register to Uot Care to get students package
                 </h5>
               </div>
               <hr class="mt-1 md:mt-3 border-b-1 border-gray-400"/>
             </div>
-            <div class="flex-auto px-4 lg:px-10 py-gdd10 pt-0">
+            <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
               <form class="w-full max-w-lg">
                 <div class="flex  -mx-3 mb-1">
                   <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1 md:mb-2"
                            for="grid-first-name">
                       First Name
                     </label>
@@ -31,7 +31,7 @@
                     <!--                    <p class="text-red-500 text-xs italic">Please fill out this field.</p>-->
                   </div>
                   <div class="w-full md:w-1/2 px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1 md:mb-2"
                            for="grid-last-name">
                       Last Name
                     </label>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="flex  -mx-3 mb-1">
                   <div class="w-full md:w-1/2 px-3 mb-2 md:mb-0">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1 md:mb-2"
                            for="email">
                       Email
                     </label>
@@ -52,7 +52,7 @@
                     <!--                    <p class="text-red-500 text-xs italic">Please fill out this field.</p>-->
                   </div>
                   <div class="w-full md:w-1/2 px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1 md:mb-2"
                            for="username">
                       Username
                     </label>
@@ -65,7 +65,7 @@
 
                 <div class="flex flex-wrap -mx-3 mb-1">
                   <div class="w-full px-3">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-1 md:mb-2"
                            for="grid-password">
                       Password
                     </label>
@@ -172,6 +172,11 @@
   }
 </script>
 <style>
+  @media (max-width: 768px) {
+    .register-card-title{
+      font-size:0.800rem !important;
+    }
+  }
   .register-bg {
     background-size: 100%;
     background: #162e40;
