@@ -24,7 +24,6 @@
 </template>
 <script>
   import qs from "qs";
-  import {loginPath, ApiBaseUrl} from "../constants";
 
   export default {
     data() {

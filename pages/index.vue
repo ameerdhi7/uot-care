@@ -9,7 +9,6 @@
 </template>
 
 <script>
-  import {loginPath, universitiesPath} from "../constants";
 
   export default {
     name: 'index',

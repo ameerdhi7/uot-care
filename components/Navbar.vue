@@ -10,22 +10,25 @@
       <NLink to="/login">Sign in</NLink>
     </li>
     <li data-menuanchor="offers" class="mr-5 text-white"><a href="/#offers">Browse Offers</a></li>
-    <li id="logout-button" v-if="this.$auth.loggedIn" @click="logoutButtonOpened=!logoutButtonOpened"  class="md:fixed  md:right-0 text-white scale-hover">
-    <div class="flex">
-      <svg  class="fill-current  w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
-      </svg>
-      {{this.$auth.user.username}}
-    </div>
-      <button @click="this.$auth.logout()" v-show="logoutButtonOpened" href=""  class="bg-teal-900 logout-trans w-full rounded p-1">Logout</button>
+    <li id="logout-button" v-if="this.$auth.loggedIn" @click="logoutButtonOpened=!logoutButtonOpened"
+        class="md:fixed  md:right-0 text-white scale-hover">
+      <div class="flex">
+        <svg class="fill-current  w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+        </svg>
+        {{this.$auth.user.username}}
+      </div>
+      <button @click="this.$auth.logout()" v-show="logoutButtonOpened"
+              class="bg-teal-900 logout-trans w-full rounded p-1">Logout
+      </button>
     </li>
   </ul>
 </template>
 <script>
   export default {
-    data(){
+    data() {
       return {
-        logoutButtonOpened:false
+        logoutButtonOpened: false
       }
     }
   }
@@ -56,14 +59,15 @@
     margin: 10px 0;
     position: relative
   }
-@media (min-width: 768px) {
-  #logout-button {
-    margin: 0 !important;
-    position: fixed;
-    top: 34px;
-  }
 
-}
+  @media (min-width: 768px) {
+    #logout-button {
+      margin: 0 !important;
+      position: fixed;
+      top: 34px;
+    }
+
+  }
 
   #menu a {
     color: #fff;
@@ -102,7 +106,8 @@
     }
 
   }
-  .logout-trans{
+
+  .logout-trans {
     transition: all .6s;
   }
 </style>
