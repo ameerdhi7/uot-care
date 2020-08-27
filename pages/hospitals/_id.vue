@@ -34,7 +34,7 @@
   </section>
 </template>
 <script>
-  import {offersPath,checkoutPath} from "../../constants";
+  import {offersPath, checkoutPath} from "../../constants";
   import qs from 'qs';
 
   export default {
@@ -61,11 +61,12 @@
             universityName: this.$auth.user.universityName,
             offerId: offerId
           }));
-          this.$swal(
-            `congrat!`,
-            response.data.message,
-            'success'
-          );
+          console.log(response.message);
+          this.$swal({
+            title:'congrats',
+            icon:'success',
+            text:response.message
+          });
         } catch (e) {
           console.log(e)
         }
@@ -74,7 +75,10 @@
     },
     mounted() {
       this.fetchHospitalOffers();
-      document.getElementsByClassName('active')[0].classList.remove('active');
+      let actives = document.getElementsByClassName('active');
+      if (actives[0])
+        actives[0].classList.remove('active');
+
     },
   }
 </script>
