@@ -63,9 +63,9 @@
           }));
           console.log(response.message);
           this.$swal({
-            title:'congrats',
-            icon:'success',
-            text:response.message
+            title: 'congrats',
+            icon: 'success',
+            text: response.message
           });
         } catch (e) {
           console.log(e)
