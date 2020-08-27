@@ -2,7 +2,7 @@
   <div class="w-full section h-screen flex items-center justify-center" style="background: #162e40">
     <div style="height: 77%" class="hospital-section-bg  flex justify-center items-center  w-full">
       <div class="rounded p-12 mx-3 md:mx-0 my-auto  bg-gray-300">
-        <h1 class="text-3xl ">Select a University to Browse its offers</h1>
+        <h1 class="text-3xl ">Select a Hospital to Browse its offers</h1>
         <div class="flex items-center justify-center  flex-wrap">
           <div class="inline-block relative w-64 md:mr-1  mb-3 md:mb-0">
             <select v-model="selectedHospital"

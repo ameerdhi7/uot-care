@@ -74,6 +74,7 @@
     },
     mounted() {
       this.fetchHospitalOffers();
+      document.getElementsByClassName('active')[0].classList.remove('active');
     },
   }
 </script>

@@ -139,28 +139,18 @@
           console.log(err)
         }
       },
-      handResponseMessage(message) {
-        if (message.includes("Verify"))
-          this.$swal(
-            `Good job! ${this.credentials.username}`,
-            `Verification email has sent to ${this.credentials.email} . Verify your account to use Health Care App.`,
-            'success'
-          );
-        else
-          this.$swal({
-            icon: 'error',
-            title: 'Oops...',
-            text: message,
-          });
-      },
       async registerUser() {
         try {
           const response = await this.$axios.$post(registerPath, qs.stringify(this.credentials));
-          this.handResponseMessage(response.data.message)
+          this.$swal({
+            icon:'success',
+            title:`good job ${this.credentials.firstName}`,
+            text: response,
+          });
         } catch (err) {
           this.$swal({
             icon: 'error',
-            title: 'Please fill out the all the required fields',
+            title: err.response.data,
           });
           console.log(err)
         }
@@ -173,10 +163,11 @@
 </script>
 <style>
   @media (max-width: 768px) {
-    .register-card-title{
-      font-size:0.800rem !important;
+    .register-card-title {
+      font-size: 0.800rem !important;
     }
   }
+
   .register-bg {
     background-size: 100%;
     background: #162e40;

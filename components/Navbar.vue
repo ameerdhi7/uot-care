@@ -6,7 +6,7 @@
     <li data-menuanchor="home" class="mr-5 active text-white scale-hover">
       <NLink to="/#home">Home</NLink>
     </li>
-    <li v-if="!this.$auth.loggedIn" data-menuanchor="register" class="mr-5 text-white scale-hover">
+    <li id="login" v-if="!this.$auth.loggedIn" data-menuanchor="register" class="mr-5 text-white scale-hover">
       <NLink to="/login">Sign in</NLink>
     </li>
     <li data-menuanchor="offers" class="mr-5 text-white"><a href="/#offers">Browse Offers</a></li>
@@ -16,9 +16,9 @@
         <svg class="fill-current  w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
           <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
         </svg>
-        {{this.$auth.user.username}}
+        {{this.$auth.user.firstName}}
       </div>
-      <button @click="this.$auth.logout()" v-show="logoutButtonOpened"
+      <button @click="logout" v-show="logoutButtonOpened"
               class="bg-teal-900 logout-trans w-full rounded p-1">Logout
       </button>
     </li>
@@ -30,7 +30,12 @@
       return {
         logoutButtonOpened: false
       }
-    }
+    },
+    methods:{
+      logout(){
+        this.$auth.logout();
+      },
+    },
   }
 </script>
 <style scoped>
@@ -63,8 +68,9 @@
   @media (min-width: 768px) {
     #logout-button {
       margin: 0 !important;
-      position: fixed;
       top: 34px;
+      right: 13px;
+      position: fixed !important;
     }
 
   }
@@ -99,6 +105,11 @@
       display: flex;
       justify-content: center;
       border-top-width: 1px;
+      transition: all .3s;
+    }
+    #logout-button button  {
+      background: white;
+      color: black;
     }
 
     #logo {

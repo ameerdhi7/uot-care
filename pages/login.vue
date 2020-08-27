@@ -24,6 +24,7 @@
 </template>
 <script>
   import qs from "qs";
+  import {loginPath} from "../constants";
 
   export default {
     data() {
@@ -38,25 +39,24 @@
     methods: {
       async userLogin() {
         try {
-          let response =
-            await this.$auth.loginWith('local', {data: qs.stringify(this.credentials)})
-              .then(() => this.$router.replace({name: 'index'})
-              )
-          ;
-          console.log(response);
-          this.user = response.data;
+          await this.$auth.loginWith('local', {data: qs.stringify(this.credentials)});
+          this.$router.replace({name: 'index'});
         } catch (err) {
-          console.log(err)
-
+          this.$swal({
+            icon: 'error',
+            title: err.response.data,
+          })
         }
       },
     },
+    mounted() {
+      document.getElementsByClassName('active')[0].classList.remove('active');
+      document.getElementById('login').classList.add('active');
+
+    },
     created() {
-      if (this.$auth.loggedIn) {
-        this.$router.replace({name: 'index'})
-
-
-      }
+      if (this.$auth.loggedIn)
+        this.$router.replace({name: 'index'});
     },
   }
 
