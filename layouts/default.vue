@@ -6,8 +6,6 @@
 </template>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap');
-
   html {
     font-family: 'Tajawal', sans-serif;
   }
@@ -17,7 +15,6 @@
     background-attachment: fixed;
     background-size: cover;
     background-blend-mode: multiply;
-    /*background-size: cover;*/
   }
 
   #fp-nav ul li a span, .fp-slidesNav ul li a span {
