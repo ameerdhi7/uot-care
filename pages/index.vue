@@ -1,10 +1,12 @@
 <template>
   <div>
-    <full-page :options="options">
-      <HeroSection/>
-      <Register/>
-      <Hospitals/>
-    </full-page>
+    <client-only>
+      <full-page :options="options">
+        <HeroSection/>
+        <Register/>
+        <Hospitals/>
+      </full-page>
+    </client-only>
   </div>
 </template>
 

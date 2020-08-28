@@ -52,7 +52,6 @@
     mounted() {
       document.getElementsByClassName('active')[0].classList.remove('active');
       document.getElementById('login').classList.add('active');
-git
     },
     created() {
       if (this.$auth.loggedIn)
